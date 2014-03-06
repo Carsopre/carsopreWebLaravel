@@ -4,12 +4,13 @@
 		@include('includes.header')
 	</header>
 	<div id="container">
-	    @if(Session::has('message'))
-	       <div class="alert-box ">
-		<p class="alert">{{ Session::get('message') }}</p>
-	      </div>
-	    @endif
 		<div id="content" class="row">
+			@if(Session::has('message'))
+				<div data-alert class="alert-box {{ Session::get('type') }}">
+					{{ Session::get('message') }}
+					<a href class="close">&times;</a>
+				</div>
+			@endif
 		@yield('content')
 		</div>
 	</div>

@@ -36,26 +36,36 @@ class UsersController extends BaseController {
 		  $user->email = Input::get('email');
 		  $user->password = Hash::make(Input::get('password'));
 		  $user->save();
-		  return Redirect::to('portal')->with('message', 'Thanks for registering!');
+		  return Redirect::to('portal')
+				->with('type', 'success')
+				->with('message', 'Thanks for registering!');
 	    } else {
 		// validation has failed, display error messages  
-		return Redirect::to('users/register')->with('message', 'The following errors occurred')->withErrors($validator)->withInput();
+		return Redirect::to('users/register')
+				->with('type', 'alert')
+				->with('message', 'The following errors occurred')
+				->withErrors($validator)
+				->withInput();
 
 	    }
 	}
 
 	public function postSignin()
 	{
+		$username = Input::get('username');
 		$credentials = array(
 			'username' 	=>Input::get('username'), 
 			'password'	=>Input::get('password')
 		);
-		$cad = (implode(",", $credentials));
+		
 		if (Auth::attempt($credentials)){
-			return Redirect::to('users/dashboard')->with('message','Welcome %s to your Dashboard');
+			return Redirect::to('users/dashboard')
+			->with('type', 'success')
+			->with('message', sprintf('Welcome %s to your Dashboard', $username));
 		} else {
 			return Redirect::to('portal')
-			->with('message', sprintf('%s Your username/password combination was incorrect', $cad ))
+			->with('type', 	'alert')
+			->with('message',	'Your username/password combination was incorrect')
 			->withInput();
 		}
 	}
@@ -68,6 +78,8 @@ class UsersController extends BaseController {
 		
 	public function getLogout() {
 	  Auth::logout();
-	  return Redirect::to('portal')->with('message', 'Your are now logged out!');
+	  return Redirect::to('portal')
+			->with('type', 'success')
+			->with('message', 'Your are now logged out!');
 	}
 }
