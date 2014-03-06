@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration {
+class CreateLanguagesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,13 @@ class CreateUsersTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('users', function($table){
+		//
+		Schema::create('languages', function($table){
 			$table->increments('id');
-			$table->string('username', 20)->unique();
-			$table->string('email', 100)->unique();
-			$table->string('password', 64);
-			$table->tinyint('profile_id')->unsigned()->default(2);
-			$table->tinyint('language_id')->unsigned();
 			$table->tinyint('enabled')->unsigned()->default(1);
+			$table->char('locale', 5);
+			$table->varchar('name', 16)->unique();
+			$table->varchar('flag', 24);
 			$table->timestamps();
 		});
 	}
@@ -32,7 +31,7 @@ class CreateUsersTable extends Migration {
 	public function down()
 	{
 		//
-		Schema::drop('users');
+		Schema::drop('languages');
 	}
 
 }
