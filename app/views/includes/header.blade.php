@@ -24,7 +24,10 @@
 		</ul>
 		
 		<ul class="right">
-			<li><a href="#">Profile</a></li>			
+			<li><a href="#">Profile</a></li>
+			@if(Auth::check())
+				<li>{{ HTML::link('users/logout', 'Logout') }}</li>
+			@endif
 		</ul>
 		
 	  </section>

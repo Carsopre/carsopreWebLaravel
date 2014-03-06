@@ -1,5 +1,5 @@
 @section('content')
-  <div class="large-8 columns">
+  <div class="large-8 large-centered columns">
   {{ Form::open(array('url'=>'users/signin', 'class'=>'form-signin')) }}
     <fieldset class="stacked login">
       <legend> Log in </legend>
@@ -14,10 +14,14 @@
 		  array('id'=>'password', 'class'=>'field', 
 			'type'=>'password', 'placeholder'=>'Password')) }}
  
+	<div class="small-6 column">
     {{ Form::submit(
 		  'Login', 
-		  array('class'=>'button large-12 columns'))}}
-    
+		  array('class'=>'button expand'))}}
+    </div>
+    <div class="small-6 column">
+		{{ HTML::link('users/register', 'Register', array('class'=>'button expand')) }}
+    </div>
     </fieldset>
   {{ Form::close() }}
   </div>

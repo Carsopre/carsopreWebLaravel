@@ -36,7 +36,7 @@ class UsersController extends BaseController {
 		  $user->email = Input::get('email');
 		  $user->password = Hash::make(Input::get('password'));
 		  $user->save();
-		  return Redirect::to('users/login')->with('message', 'Thanks for registering!');
+		  return Redirect::to('portal')->with('message', 'Thanks for registering!');
 	    } else {
 		// validation has failed, display error messages  
 		return Redirect::to('users/register')->with('message', 'The following errors occurred')->withErrors($validator)->withInput();
@@ -54,7 +54,7 @@ class UsersController extends BaseController {
 		if (Auth::attempt($credentials)){
 			return Redirect::to('users/dashboard')->with('message','Welcome %s to your Dashboard');
 		} else {
-			return Redirect::to('users/login')
+			return Redirect::to('portal')
 			->with('message', sprintf('%s Your username/password combination was incorrect', $cad ))
 			->withInput();
 		}
@@ -68,6 +68,6 @@ class UsersController extends BaseController {
 		
 	public function getLogout() {
 	  Auth::logout();
-	  return Redirect::to('users/login')->with('message', 'Your are now logged out!');
+	  return Redirect::to('portal')->with('message', 'Your are now logged out!');
 	}
 }

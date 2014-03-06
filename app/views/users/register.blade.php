@@ -1,5 +1,5 @@
 @section('content')
-<div class="large-8 columns">
+<div class="large-8 large-centered columns">
 {{ Form::open(array('url'=>'users/create', 'class'=>'form-signup')) }}
     <fieldset class="stacked register">
    <legend>Register</legend>
