@@ -13,9 +13,10 @@ class CreatePermissionsTable extends Migration {
 	public function up()
 	{
 		//
+		if (Schema::hasTable('permissions'))	$this->down();
 		Schema::create('permissions', function($table){
 			$table->increments('id');
-			$table->varchar('name', 64)->unique();
+			$table->string('name', 64)->unique();
 		});
 	}
 
@@ -27,6 +28,7 @@ class CreatePermissionsTable extends Migration {
 	public function down()
 	{
 		//
+		Schema::drop('permissions');
 	}
 
 }

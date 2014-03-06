@@ -13,10 +13,11 @@ class CreatePermissionsProfilesTable extends Migration {
 	public function up()
 	{
 		//
+		if (Schema::hasTable('permissions_profiles'))	$this->down();
 		Schema::create('permissions_profiles', function($table){
 			$table->increments('id');
-			$table->tinyint('permission_id')->unsigned();
-			$table->smallint('profile_id')->unsigned();
+			$table->tinyInteger('permission_id')->unsigned();
+			$table->smallInteger('profile_id')->unsigned();
 			$table->unique(array('permission_id', 'profile_id'));
 		});
 	}

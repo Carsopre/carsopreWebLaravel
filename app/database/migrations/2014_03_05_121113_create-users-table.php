@@ -12,14 +12,16 @@ class CreateUsersTable extends Migration {
 	 */
 	public function up()
 	{
+	 if (Schema::hasTable('users'))	$this->down();
+		
 		Schema::create('users', function($table){
 			$table->increments('id');
 			$table->string('username', 20)->unique();
 			$table->string('email', 100)->unique();
 			$table->string('password', 64);
-			$table->tinyint('profile_id')->unsigned()->default(2);
-			$table->tinyint('language_id')->unsigned();
-			$table->tinyint('enabled')->unsigned()->default(1);
+			$table->tinyInteger('profile_id')->unsigned()->default(2);
+			$table->tinyInteger('language_id')->unsigned();
+			$table->tinyInteger('enabled')->unsigned()->default(1);
 			$table->timestamps();
 		});
 	}

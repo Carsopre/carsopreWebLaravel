@@ -13,9 +13,10 @@ class CreateProfilesTable extends Migration {
 	public function up()
 	{
 		//
+		if (Schema::hasTable('profiles'))	$this->down();
 		Schema::create('profiles', function($table){
 			$table->increments('id');
-			$table->varchar('name', 64)->unique();
+			$table->string('name', 64)->unique();
 			$table->timestamps();
 		});
 

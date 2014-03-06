@@ -13,12 +13,13 @@ class CreateLanguagesTable extends Migration {
 	public function up()
 	{
 		//
+		if (Schema::hasTable('languages'))	$this->down();
 		Schema::create('languages', function($table){
 			$table->increments('id');
-			$table->tinyint('enabled')->unsigned()->default(1);
-			$table->char('locale', 5);
-			$table->varchar('name', 16)->unique();
-			$table->varchar('flag', 24);
+			$table->tinyInteger('enabled')->unsigned()->default(1);
+			$table->string('locale', 5);
+			$table->string('name', 16)->unique();
+			$table->string('flag', 24);
 			$table->timestamps();
 		});
 	}

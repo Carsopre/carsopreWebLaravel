@@ -1,50 +1,5 @@
 <?php
 
-class DatabaseSeeder extends Seeder {
-
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-
-    public function run()
-    {
-		Eloquent::unguard();
-        
-        $tables = array(
-			'categories',
-			'languages',
-			'permissions',
-			'profiles',
-			'permissions_profiles',
-			'users'
-		);
-
-		foreach ($tables as $table) {
-		DB::table($table)->truncate();
-		}
-		
-		$this->call('CategoryTableSeeder');
-// 		$this->command->info('CategoryTable entries added');
-		
-		$this->call('LanguageTableSeeder');
-// 		$this->command->info('LanguageTable entries added');
-		
-		$this->call('PermissionTableSeeder');
-// 		$this->command->info('PermissionTable entries added');
-		
-		$this->call('ProfileTableSeeder');
-// 		$this->command->info('ProfileTable entries added');
-		
-		$this->call('Permissions_ProfileTableSeeder');
-// 		$this->command->info('Permissions_ProfileTable entries added');
-		
-		$this->call('UserTableSeeder');
-// 		$this->command->info('UserTable entries added');
-    }
-
-}
 class CategoryTableSeeder extends Seeder {
 	/**
 	 * Inserts the default categories
@@ -53,13 +8,16 @@ class CategoryTableSeeder extends Seeder {
 	 */
 	public function run()
 	{
-// 		DB::table('categories')->delete();
+		DB::table('categories')->delete();
 		Category::insert(array(
 		array('id' 	=> 	'1',	'name'	=>	'Web'),
 		array('id' 	=> 	'2',	'name'	=>	'Curriculum Vitae'),
 		array('id' 	=> 	'3',	'name'	=>	'Portfolio'),
 		array('id' 	=> 	'4',	'name'	=>	'Contact')
-		));		
+		));
+		$this->command->info('CategoriesTable entries added');
+		$this->call('LanguageTableSeeder');
+		
 	}
 }
 class LanguageTableSeeder extends Seeder {
@@ -70,7 +28,7 @@ class LanguageTableSeeder extends Seeder {
 	 */
 	public function run()
 	{
-// 		DB::table('languages')->delete();
+		DB::table('languages')->delete();
 		Language::insert(array(
 		array(
 			'id' 		=> 	'1',
@@ -86,6 +44,7 @@ class LanguageTableSeeder extends Seeder {
 			'enabled'	=>	'1')
 		));
 		
+		$this->call('PermissionTableSeeder');
 	}
 }
 class PermissionTableSeeder extends Seeder {
@@ -96,7 +55,7 @@ class PermissionTableSeeder extends Seeder {
 	 */
 	public function run()
 	{
-// 		DB::table('permissions')->delete();	
+		DB::table('permissions')->delete();	
 		Permission::insert(array(
 		// -- Users
 		array('id' 	=> 	1,	'name'	=>	'Create Users'),
@@ -109,6 +68,8 @@ class PermissionTableSeeder extends Seeder {
 		array('id' 	=> 	12,	'name'	=>	'Update profiles'),
 		array('id' 	=> 	13,	'name'	=>	'Delete profiles')
 		));
+		
+		$this->call('ProfileTableSeeder');
 	}
 }
 class ProfileTableSeeder extends Seeder {
@@ -119,13 +80,14 @@ class ProfileTableSeeder extends Seeder {
 	 */
 	public function run()
 	{
-// 		DB::table('profiles')->delete();
+		DB::table('profiles')->delete();
 		Profile::insert(array(
 		array('id' 	=> 	'1', 'name'	=>	'Admin' ), 
 		array('id' 	=> 	'2', 'name'	=>	'User'), 
 		array('id' 	=> 	'3', 'name'	=>	'Guest')
 		));
 		
+		$this->call('Permissions_ProfileTableSeeder');
 	}
 }
 class Permissions_ProfileTableSeeder extends Seeder {
@@ -149,6 +111,7 @@ class Permissions_ProfileTableSeeder extends Seeder {
 // 			'permission_id' 	=> 	'1',
 // 			'name'	=>	'Web')
 // 		));
+		$this->call('UserTableSeeder');
 	}
 }
 
@@ -160,16 +123,17 @@ class UserTableSeeder extends Seeder {
 	 */
 	public function run()
 	{
-// 		DB::table('users')->delete();
+		DB::table('users')->delete();
 		User::create(
 		array(
 			'id' 			=> 	'1',
 			'username'		=>	'Admin',
 			'email'			=>	'cssp1989@gmail.com',
-			'password'		=>	Hash::make('admin123'),
-			'profile_id'	=>	'1',
+			'password'		=>	'admin123',
+			'profile_id'	=>	'Web',
 			'language_id'	=>	'2',
 			'enabled'		=>	'1')
 		);
+		$this->command->info('UserTable entries added');
 	}
 }

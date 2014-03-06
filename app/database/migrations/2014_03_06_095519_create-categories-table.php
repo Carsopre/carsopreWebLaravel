@@ -13,11 +13,12 @@ class CreateCategoriesTable extends Migration {
 	public function up()
 	{
 		//
+		if (Schema::hasTable('categories'))	$this->down();
 		Schema::create('categories', function($table){
 			$table->increments('id');
-			$table->varchar('name',  64)->unique();
+			$table->string('name',  64)->unique();
 			$table->text('description');
-			$table->tinyint('enabled')->unsigned()->default(1);
+			$table->tinyInteger('enabled')->unsigned()->default(1);
 			$table->timestamps();
 		});
 	}

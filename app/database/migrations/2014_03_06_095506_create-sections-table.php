@@ -13,12 +13,14 @@ class CreateSectionsTable extends Migration {
 	public function up()
 	{
 		//
+		if (Schema::hasTable('sections'))	$this->down();
+		
 		Schema::create('sections',  function($table){
-			$table->increments('id')->primary();
-			$table->tinyint('category_id');
-			$table->varchar('name', 128)->unique();
+			$table->increments('id');
+			$table->tinyInteger('category_id');
+			$table->string('name', 128)->unique();
 			$table->text('description');
-			$table->tinyint('enabled')->unsigned()->default(1);
+			$table->tinyInteger('enabled')->unsigned()->default(1);
 			$table->timestamps();
 			
 			//references
