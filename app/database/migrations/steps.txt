@@ -1,3 +1,5 @@
+php artisan migrate:install
+================================================
 -composer dump-autoload (if i mess)
 php artisan migrate:make create-'name of table'-table
 php artisan migrate //creates table in db
