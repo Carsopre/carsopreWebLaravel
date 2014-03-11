@@ -14,35 +14,27 @@ class DatabaseSeeder extends Seeder {
         
         $tables = array(
 			'categories',
-			'languages',
-			'permissions',
-			'profiles',
 			'permissions_profiles',
-			'users'
+			'permissions',
+			'users',
+			'profiles',
+			'languages'
 		);
 
-		foreach ($tables as $table) {
-		DB::table($table)->truncate();
+		DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+		foreach ($tables as $table) {			
+			DB::table($table)->truncate();
 		}
+		DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 		
 		$this->call('CategoryTableSeeder');
-// 		$this->command->info('CategoryTable entries added');
-		
 		$this->call('LanguageTableSeeder');
-// 		$this->command->info('LanguageTable entries added');
-		
 		$this->call('PermissionTableSeeder');
-// 		$this->command->info('PermissionTable entries added');
-		
 		$this->call('ProfileTableSeeder');
-// 		$this->command->info('ProfileTable entries added');
-		
 		$this->call('Permissions_ProfileTableSeeder');
-// 		$this->command->info('Permissions_ProfileTable entries added');
-		
 		$this->call('UserTableSeeder');
-// 		$this->command->info('UserTable entries added');
-    }
+
+	}
 
 }
 class CategoryTableSeeder extends Seeder {
@@ -161,15 +153,15 @@ class UserTableSeeder extends Seeder {
 	public function run()
 	{
 // 		DB::table('users')->delete();
-		User::create(
-		array(
-			'id' 			=> 	'1',
-			'username'		=>	'Admin',
-			'email'			=>	'cssp1989@gmail.com',
-			'password'		=>	Hash::make('admin123'),
-			'profile_id'	=>	'1',
-			'language_id'	=>	'2',
-			'enabled'		=>	'1')
-		);
+// 		User::create(
+// 		array(
+// 			'id' 			=> 	'1',
+// 			'username'		=>	'Admin',
+// 			'email'			=>	'cssp1989@gmail.com',
+// 			'password'		=>	Hash::make('admin123'),
+// 		//	'profile_id'	=>	'1',
+// 		//	'language_id'	=>	'2',
+// 			'enabled'		=>	'1')
+// 		);
 	}
 }
