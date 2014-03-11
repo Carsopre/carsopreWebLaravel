@@ -14,20 +14,24 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	
 	public static $unguarded = true;
 	
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
 	protected $table = 'users';
-
-	/**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
+	protected $primaryKey = 'user_id';
 	protected $hidden = array('password');
 
+	/**
+	 * 
+	 * @return Relationships	
+     */
+	public function profile()
+	{
+		return $this->belongsTo('Profile');
+	}
+	
+	public function language()
+	{
+		return $this->belongsTo('Language');
+	}
+	
 	/**
 	 * Get the unique identifier for the user.
 	 *

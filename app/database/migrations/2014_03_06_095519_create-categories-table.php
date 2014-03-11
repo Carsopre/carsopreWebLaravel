@@ -15,7 +15,10 @@ class CreateCategoriesTable extends Migration {
 		//
 		if (Schema::hasTable('categories'))	$this->down();
 		Schema::create('categories', function($table){
+			$table	-> engine='InnoDB';
+			//Primary Key
 			$table->increments('id');
+			//Standard
 			$table->string('name',  64)->unique();
 			$table->text('description');
 			$table->tinyInteger('enabled')->unsigned()->default(1);

@@ -4,15 +4,17 @@ class Language extends Eloquent{
 
 	
 	public static $rules = array(
+		//TO-DO
 	 );
 	
 	public static $unguarded = true;
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'languages';
 
+	protected $table = 'languages';
+	protected $primaryKey = 'language_id';
+	
+	public function users()
+	{
+		return $this->hasMany('User');
+	}
 
 }

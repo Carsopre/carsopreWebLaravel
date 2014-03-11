@@ -15,7 +15,10 @@ class CreatePermissionsTable extends Migration {
 		//
 		if (Schema::hasTable('permissions'))	$this->down();
 		Schema::create('permissions', function($table){
+			$table	-> engine='InnoDB';
+			//Primary Key
 			$table->increments('id');
+			//Standard
 			$table->string('name', 64)->unique();
 		});
 	}

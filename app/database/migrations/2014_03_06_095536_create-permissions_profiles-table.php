@@ -15,7 +15,10 @@ class CreatePermissionsProfilesTable extends Migration {
 		//
 		if (Schema::hasTable('permissions_profiles'))	$this->down();
 		Schema::create('permissions_profiles', function($table){
+			$table	-> engine='InnoDB';
+			//Primary Key
 			$table->increments('id');
+			//Standard
 			$table->tinyInteger('permission_id')->unsigned();
 			$table->smallInteger('profile_id')->unsigned();
 			$table->unique(array('permission_id', 'profile_id'));

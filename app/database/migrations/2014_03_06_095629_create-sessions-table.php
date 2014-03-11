@@ -15,7 +15,10 @@ class CreateSessionsTable extends Migration {
 		//
 		if (Schema::hasTable('sessions'))	$this->down();
 		Schema::create('sessions',  function($table){
+			$table	-> engine='InnoDB';
+			//Primary Key
 			$table->increments('id');
+			//Standard
 			$table->string('ip_address',  16)->default(0);
 			$table->string('user_agent',  120);
 			$table->integer('last_activity')->default(0);

@@ -14,9 +14,14 @@ class CreateProfilesTable extends Migration {
 	{
 		//
 		if (Schema::hasTable('profiles'))	$this->down();
+		
 		Schema::create('profiles', function($table){
+			$table	-> engine='InnoDB';
+			//Primary Key
 			$table->increments('id');
+			//Standard
 			$table->string('name', 64)->unique();
+			//Timestamps for Create - Update
 			$table->timestamps();
 		});
 
