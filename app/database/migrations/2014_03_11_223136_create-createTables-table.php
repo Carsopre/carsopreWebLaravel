@@ -44,7 +44,9 @@ class CreateCreateTablesTable extends Migration {
 			$table->timestamps();
 			//Relationships
 			$table	->	foreign('category_id')
-					->	references('id')->on('categories');
+					->	references('id')->on('categories')
+					->	onUpdate('cascade')
+					->	onDelete('restrict');
 		});
 
 		Schema::create('permissions', function($table){
@@ -75,9 +77,13 @@ class CreateCreateTablesTable extends Migration {
 			$table->unique(array('permission_id', 'profile_id'));
 			//Relationships
 			$table	->	foreign('permission_id')
-					->	references('id')->on('permissions');
+					->	references('id')->on('permissions')
+					->	onUpdate('cascade')
+					->	onDelete('restrict');
 			$table	->	foreign('profile_id')
-					->	references('id')->on('profiles');
+					->	references('id')->on('profiles')
+					->	onUpdate('cascade')
+					->	onDelete('restrict');
 		});
 						
 		Schema::create('languages', function($table){
@@ -108,9 +114,13 @@ class CreateCreateTablesTable extends Migration {
 			$table->timestamps();
 			//Relationships
 			$table	->	foreign('profile_id')
-					->	references('id')->on('profiles');
+					->	references('id')->on('profiles')
+					->	onUpdate('cascade')
+					->	onDelete('restrict');
 			$table	->	foreign('language_id')
-					->	references('id')->on('languages');
+					->	references('id')->on('languages')
+					->	onUpdate('cascade')
+					->	onDelete('restrict');
 		});
 		
 		Schema::create('sessions',  function($table){

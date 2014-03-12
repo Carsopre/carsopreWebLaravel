@@ -5,8 +5,7 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.1.*",
-		"stevenmaguire/zurb-foundation-laravel": "dev-master",
-		"codesleeve/asset-pipeline": "dev-master"
+		"stevenmaguire/zurb-foundation-laravel": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
