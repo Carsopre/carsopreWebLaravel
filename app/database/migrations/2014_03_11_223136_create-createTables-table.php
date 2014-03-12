@@ -107,8 +107,8 @@ class CreateCreateTablesTable extends Migration {
 			$table	->	string('username', 20)->unique();
 			$table	->	string('email', 100)->unique();
 			$table	->	string('password', 64);
-			$table	->	integer('profile_id')->unsigned();			
-			$table	->	integer('language_id')->unsigned();
+			$table	->	integer('profile_id')->unsigned()->default(2);			
+			$table	->	integer('language_id')->unsigned()->default(2);
 			$table	->	tinyInteger('enabled')->unsigned()->default(1);
 			//Timestamps for Create - Update
 			$table->timestamps();
