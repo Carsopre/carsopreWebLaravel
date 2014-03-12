@@ -1,0 +1,21 @@
+<?php echo $__env->make('includes.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<body>
+	<header>
+		<?php echo $__env->make('includes.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	</header>
+	<div id="container">
+		<div id="content" class="row">
+			<?php if(Session::has('message')): ?>
+				<div data-alert class="alert-box <?php echo Session::get('type'); ?>">
+					<?php echo Session::get('message'); ?>
+					<a href class="close">&times;</a>
+				</div>
+			<?php endif; ?>
+		<?php echo $__env->yieldContent('content'); ?>
+		</div>
+	</div>
+	<footer class="row">
+		<?php echo $__env->make('includes.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<?php $__env->startSection('content'); ?>
+  <div class="large-8 large-centered columns">
+  <?php echo Form::open(array('url'=>'users/signin', 'class'=>'form-signin')); ?>
+    <fieldset class="stacked login">
+      <legend> Log in </legend>
+    <?php echo Form::text(
+		  'username', 
+		  null, 
+		  array('id'=>'username', 'class'=>'field', 
+			'type'=>'string', 'placeholder'=>'Username')); ?>
+    <?php echo Form::password(
+		  'password',
+		  null,
+		  array('id'=>'password', 'class'=>'field', 
+			'type'=>'password', 'placeholder'=>'Password')); ?>
+ 
+	<div class="small-6 column">
+    <?php echo Form::submit(
+		  'Login', 
+		  array('class'=>'button expand')); ?>
+    </div>
+    <div class="small-6 column">
+		<?php echo HTML::link('users/register', 'Register', array('class'=>'button expand')); ?>
+    </div>
+    </fieldset>
+  <?php echo Form::close(); ?>
+  </div>
+<?php $__env->stopSection(); ?>

@@ -1,0 +1,35 @@
+<?php $__env->startSection('content'); ?>
+<div class="large-8 large-centered columns">
+<?php echo Form::open(array('url'=>'users/create', 'class'=>'form-signup')); ?>
+    <fieldset class="stacked register">
+   <legend>Register</legend>
+    <ul>
+        <?php foreach($errors->all() as $error): ?>
+            <li><?php echo $error; ?></li>
+        <?php endforeach; ?>
+    </ul>
+ 
+    <?php echo Form::text('username', 
+		    null, 
+		    array('class'=>'field', 
+			  'placeholder'=>'User Name')); ?>
+    <?php echo Form::text('email',
+		    null, 
+		    array('class'=>'field', 
+			  'placeholder'=>'Email Address')); ?>
+    <?php echo Form::password('password',
+		    null,
+		    array('class'=>'field', 
+			  'placeholder'=>'Password')); ?>
+    <?php echo Form::password('password_confirmation',
+		    null,
+		    array('class'=>'field', 
+			  'placeholder'=>'Confirm Password')); ?>
+ 
+    <?php echo Form::submit('Register',
+		     array('class'=>'button large-12 columns')); ?>
+    
+    </fieldset>
+<?php echo Form::close(); ?>
+</div>
+<?php $__env->stopSection(); ?>
