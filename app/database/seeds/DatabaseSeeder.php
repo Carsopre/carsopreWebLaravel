@@ -153,15 +153,15 @@ class UserTableSeeder extends Seeder {
 	public function run()
 	{
 // 		DB::table('users')->delete();
-// 		User::create(
-// 		array(
-// 			'id' 			=> 	'1',
-// 			'username'		=>	'Admin',
-// 			'email'			=>	'cssp1989@gmail.com',
-// 			'password'		=>	Hash::make('admin123'),
-// 		//	'profile_id'	=>	'1',
-// 		//	'language_id'	=>	'2',
-// 			'enabled'		=>	'1')
-// 		);
+		User::create(
+		array(
+			'id' 			=> 	1,
+			'username'		=>	'Admin',
+			'email'			=>	'cssp1989@gmail.com',
+			'password'		=>	Hash::make('admin123'),
+			'profile_id'	=>	1,
+			'language_id'	=>	2,
+			'enabled'		=>	1)
+		);
 	}
 }

@@ -24,19 +24,6 @@ class CreateCreateTablesTable extends Migration {
 		
 		
 		//Create tables
-		Schema::create('sections',  function($table){
-			$table->increments('id');
-			$table->tinyInteger('category_id');
-			$table->string('name', 128)->unique();
-			$table->text('description');
-			$table->tinyInteger('enabled')->unsigned()->default(1);
-			$table->timestamps();
-			
-			//references
-// 			$table->foreign('category')->references('id')->on('categories');
-		});
-
-		
 		Schema::create('categories', function($table){
 			$table	-> engine='InnoDB';
 			//Primary Key
@@ -48,16 +35,18 @@ class CreateCreateTablesTable extends Migration {
 			$table->timestamps();
 		});
 
-		Schema::create('permissions_profiles', function($table){
-			$table	-> engine='InnoDB';
-			//Primary Key
+		Schema::create('sections',  function($table){
 			$table->increments('id');
-			//Standard
-			$table->tinyInteger('permission_id')->unsigned();
-			$table->smallInteger('profile_id')->unsigned();
-			$table->unique(array('permission_id', 'profile_id'));
+			$table->integer('category_id')->unsigned();
+			$table->string('name', 128)->unique();
+			$table->text('description');
+			$table->tinyInteger('enabled')->unsigned()->default(1);
+			$table->timestamps();
+			//Relationships
+			$table	->	foreign('category_id')
+					->	references('id')->on('categories');
 		});
-		
+
 		Schema::create('permissions', function($table){
 			$table	-> engine='InnoDB';
 			//Primary Key
@@ -65,7 +54,7 @@ class CreateCreateTablesTable extends Migration {
 			//Standard
 			$table->string('name', 64)->unique();
 		});
-					
+			
 		Schema::create('profiles', function($table){
 			$table	-> engine='InnoDB';
 			//Primary Key
@@ -75,7 +64,22 @@ class CreateCreateTablesTable extends Migration {
 			//Timestamps for Create - Update
 			$table->timestamps();
 		});
-		
+			
+		Schema::create('permissions_profiles', function($table){
+			$table	-> engine='InnoDB';
+			//Primary Key
+			$table->increments('id');
+			//Standard
+			$table->integer('permission_id')->unsigned();
+			$table->integer('profile_id')->unsigned();
+			$table->unique(array('permission_id', 'profile_id'));
+			//Relationships
+			$table	->	foreign('permission_id')
+					->	references('id')->on('permissions');
+			$table	->	foreign('profile_id')
+					->	references('id')->on('profiles');
+		});
+						
 		Schema::create('languages', function($table){
 			$table	-> engine='InnoDB';
 			//Primary Key
@@ -97,14 +101,14 @@ class CreateCreateTablesTable extends Migration {
 			$table	->	string('username', 20)->unique();
 			$table	->	string('email', 100)->unique();
 			$table	->	string('password', 64);
-			$table	->	tinyInteger('profile_id')->unsigned();
-			$table	->	tinyInteger('language_id')->unsigned();
+			$table	->	integer('profile_id')->unsigned();			
+			$table	->	integer('language_id')->unsigned();
 			$table	->	tinyInteger('enabled')->unsigned()->default(1);
 			//Timestamps for Create - Update
 			$table->timestamps();
 			//Relationships
 			$table	->	foreign('profile_id')
-					->	references('id')->	on('profiles');
+					->	references('id')->on('profiles');
 			$table	->	foreign('language_id')
 					->	references('id')->on('languages');
 		});
