@@ -1,6 +1,7 @@
 	<!-- STATUS BAR -->
+	<?php echo $user; ?>
 <div class="contain-to-grid">
-	<nav class="top-bar" data-topbar="" data-options="is_hover: false">	  
+	<nav class="top-bar" data-topbar>	  
 	  <ul class="title-area">
 		<li class="name"><h1><a href="#">Project Name</a></h1></li>
 		<li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
@@ -10,14 +11,16 @@
 	 	<!-- Left Nav Section -->
 		<ul class="left">
 			<li class="divider">&nbsp;</li>
-			<li class="has-dropdown">
+			<?php if($user->hasAnyPermission(array(41,51))) :?>
+			<li class="has-dropdown not-click">
 			  <a href="#">Sections</a>
 			  <ul class="dropdown">
 			      <li><a href="#">Curriculum Vitae</a></li>
 			      <li><a href="#">PortFolio</a></li>
 			      <li><a href="#">Contact</a></li>
 			  </ul>
-		        </li>
+		    </li>
+			<?php endif ?>
 			<li class="divider">&nbsp;</li>
 			<li><a href="#">Users</a></li>
 			<li class="divider">&nbsp;</li>			
@@ -27,6 +30,7 @@
 			<li><a href="#">Profile</a></li>
 			@if(Auth::check())
 				<li>{{ HTML::link('users/logout', 'Logout') }}</li>
+				
 			@endif
 		</ul>
 		

@@ -13,7 +13,7 @@ class Profile extends Eloquent{
 	 * @var string
 	 */
 	protected $table = 'profiles';
-	protected $primaryKey = 'profile_id';
+	protected $primaryKey = 'id';
 	
 	/**
 	 * @return Relationships
@@ -21,5 +21,9 @@ class Profile extends Eloquent{
      public function users()
      {
 		return $this->hasMany('User');
+     }
+     public function permissions()
+     {
+		return $this->belongsToMany('Permission',  'permissions_profiles');
      }
 }

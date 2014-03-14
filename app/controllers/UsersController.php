@@ -1,14 +1,23 @@
 <?php
-
+use User as User;
 class UsersController extends BaseController {
 
 	
 	protected $layout = "layouts.main";
+	private $user = NULL;
+
 	public function __construct()
 	{
-	    $this->beforeFilter('csrf', array('on'=>'post'));
-	    $this->beforeFilter('auth',	array('only'=>array('getDashboard')));
+	  $this->beforeFilter('csrf', array('on'=>'post'));
+	  $this->beforeFilter('auth',	array('only'=>array('getDashboard')));
+	 
+    }
+
+	public function index()
+	{
+
 	}
+
 		
 	public function showUsers()
 	{
@@ -19,11 +28,22 @@ class UsersController extends BaseController {
 	
 	public function getLogin()
 	{
-	  $this->layout->content = View::make('users.login');
+	  //patch to avoid entering to login once logged in
+		if(Auth::guest())
+			$this->layout->content = View::make('users.login');
+		else
+			return Redirect::to('users/dashboard')
+					->with('type', 'alert')
+					->with('message', 'You are already logged in!');
 	}
 
 	public function getRegister() {
-	  $this->layout->content = View::make('users.register');
+	  //patch to avoid entering to login once logged in
+		if(Auth::guest())
+			$this->layout->content = View::make('users.register');
+		else
+			return Redirect::to('users/dashboard')
+					->with('message', 'You can`t register an account while logged!');
 	}
 
 	public function postCreate() {
@@ -31,11 +51,11 @@ class UsersController extends BaseController {
 	
 	    if ($validator->passes()) {
 		// validation has passed, save user in DB
-		  $user = new User;
-		  $user->username = Input::get('username');
-		  $user->email = Input::get('email');
-		  $user->password = Hash::make(Input::get('password'));
-		  $user->save();
+		  $us = new User;
+		  $us->username = Input::get('username');
+		  $us->email = Input::get('email');
+		  $us->password = Hash::make(Input::get('password'));
+		  $us->save();
 		  return Redirect::to('portal')
 				->with('type', 'success')
 				->with('message', 'Thanks for registering!');
@@ -52,6 +72,7 @@ class UsersController extends BaseController {
 
 	public function postSignin()
 	{
+
 		$username = Input::get('username');
 		$credentials = array(
 			'username' 	=>Input::get('username'), 
@@ -60,13 +81,13 @@ class UsersController extends BaseController {
 		
 		if (Auth::attempt($credentials)){
 			return Redirect::to('users/dashboard')
-			->with('type', 'success')
-			->with('message', sprintf('Welcome %s to your Dashboard', $username));
+				->with('type', 'success')
+				->with('message', sprintf('Welcome %s to your Dashboard', $username));
 		} else {
 			return Redirect::to('portal')
-			->with('type', 	'alert')
-			->with('message',	'Your username/password combination was incorrect')
-			->withInput();
+				->with('type', 	'alert')
+				->with('message',	'Your username/password combination was incorrect')
+				->withInput();
 		}
 	}
 	

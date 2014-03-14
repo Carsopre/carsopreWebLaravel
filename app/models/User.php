@@ -15,7 +15,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public static $unguarded = true;
 	
 	protected $table = 'users';
-	protected $primaryKey = 'user_id';
+	protected $primaryKey = 'id';
 	protected $hidden = array('password');
 
 	/**
@@ -31,7 +31,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	{
 		return $this->belongsTo('Language');
 	}
-	
+	     
 	/**
 	 * Get the unique identifier for the user.
 	 *
@@ -61,5 +61,42 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	{
 		return $this->email;
 	}
+	
+	/**
+	 * Get True or False depending on the user permissions
+	 * @return bool
+     */
+	public function getPermissions()
+	{
+		
+		return $this->permissions = array_fetch($this->profile->permissions->toArray(), 'id');
+		//return $this->permissions = $this->profile->permissions->get()->all_to_single_array('id');		
+	}
 
+     public function hasPermission($perm)
+     {
+     	if( ! is_array($perm))
+     		$perm = array($perm);
+     	if( ! isset($this->permissions))
+     		$this->getPermissions();
+
+     	return (0 == count(array_diff($perm, $this->permissions)));
+		//return in_array($perm, array_fetch($this->profile->permissions->toArray(), 'id'));
+     }
+     public function hasAnyPermission($perm)
+     {
+     	if( ! is_array($perm))
+     		$perm = array($perm);
+     	if( ! isset($this->permissions))	
+     		$this->getPermissions();
+
+     	foreach($this->permissions as $p)
+     	{
+     		if(in_array($p, $perm))
+     			return TRUE;
+     	}
+     	return FALSE;
+
+     }
+     
 }

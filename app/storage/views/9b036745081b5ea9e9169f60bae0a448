@@ -24,5 +24,8 @@
     </div>
     </fieldset>
   <?php echo Form::close(); ?>
+
+  
   </div>
+  
 <?php $__env->stopSection(); ?>

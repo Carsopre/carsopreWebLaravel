@@ -13,14 +13,25 @@
 
 Route::controller('users', 'UsersController');
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'HomeController@index');
 
 Route::get('portal',function()
 {
-	return View::make('portal/portal');
+	if(Auth::guest()) //If the user is logged then go to the dashboard
+		return View::make('portal/portal');
+	else
+		return Redirect::to('users/dashboard');
+});
+
+
+
+Route::get('login',function()
+{
+	return Redirect::to('users/login');
+});
+Route::get('register',function()
+{	
+	return Redirect::to('users/register');
 });
 
 //Route::get('users', array('uses' => 'UsersController@showUsers'));

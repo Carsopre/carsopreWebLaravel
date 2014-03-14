@@ -1,8 +1,11 @@
 @include('includes.head')
 <body>
 	<header>
+	<?php if (Auth::check()) :?>
 		@include('includes.header')
+	<?php endif ?>
 	</header>
+
 	<div id="container">
 		<div id="content" class="row">
 			@if(Session::has('message'))
@@ -17,5 +20,12 @@
 	<footer class="row">
 		@include('includes.footer')
 	</footer>
+
+		{{HTML::script('foundation/js/vendor/jquery.js')}}
+		{{HTML::script('foundation/js/foundation/foundation.js')}}
+		{{HTML::script('foundation/js/foundation/foundation.topbar.js')}}
+		<script>
+			$(document).foundation();
+		</script>
 </body>
 </html>

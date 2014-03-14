@@ -14,7 +14,7 @@
 		{{HTML::style('foundaion/css/normalize.css')}}
 		{{HTML::style('foundaion/css/normalize.min.css')}}
 		{{HTML::style('foundaion/css/style.css')}}
-		
+				
 		<title>Carsopre Web | </title>
 		
 	</head>

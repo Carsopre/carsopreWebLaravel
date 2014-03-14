@@ -10,7 +10,7 @@ class Language extends Eloquent{
 	public static $unguarded = true;
 
 	protected $table = 'languages';
-	protected $primaryKey = 'language_id';
+	protected $primaryKey = 'id';
 	
 	public function users()
 	{

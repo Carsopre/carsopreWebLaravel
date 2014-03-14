@@ -78,6 +78,22 @@ App::down(function()
 |
 */
 
+// Use for defining all type of data that we are going to send through the views
+View::composer('layouts.*', function($view)
+{
+	$user = new User;
+	if(Auth::check()){
+		$user = User::find(Auth::user()->id);
+	}
+
+	$data = array(
+        'permissions' => '1',
+        'user' => $user
+	); 
+	$view->with($data);
+});
+
+
 require app_path().'/filters.php';
 
 

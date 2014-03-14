@@ -24,5 +24,8 @@
     </div>
     </fieldset>
   {{ Form::close() }}
+
+  
   </div>
+  
 @stop

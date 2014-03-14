@@ -1,6 +1,6 @@
 <!-- FOOTER -->
 <div id="footer">
-
+		
 	<ul class="breadcrumbs">
 		<p id="footer-text">
 		<a href="<!-- < ?= site_url() ?>-->"><?= 'PROJECT_NAME' ?></a> 
@@ -8,4 +8,5 @@
 		</p>
 	</ul>
 	
-</div>		
+</div>	
+		

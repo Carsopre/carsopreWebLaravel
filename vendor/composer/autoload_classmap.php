@@ -25,7 +25,7 @@ return array(
     'Session' => $baseDir . '/app/models/sessions.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
     'TestCase' => $baseDir . '/app/tests/TestCase.php',
-    'User' => $baseDir . '/app/models/User.php',
+    'User' => $baseDir . '/app/models/user.php',
     'UserTableSeeder' => $baseDir . '/app/database/seeds/DatabaseSeeder.php',
     'UsersController' => $baseDir . '/app/controllers/UsersController.php',
 );
