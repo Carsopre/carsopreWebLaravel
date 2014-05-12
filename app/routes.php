@@ -11,14 +11,16 @@
 |
 */
 
-Route::controller('users', 'UsersController');
+Route::resource('users', 'UsersController');
+Route::resource('profiles', 'ProfilesController');
 Route::controller('portal', 'PortalController');
 ///////////////////////////////
 
 Route::get('/', 'HomeController@index');
 Route::get('portal', 'PortalController@index');
-Route::get('users', 'UsersController@index');
 
+//Route::get('users', 'UsersController@index');
+Route::get('profiles', 'ProfilesController@index');
 Route::get('login',function()
 {
 	return Redirect::to('portal/login');
@@ -27,5 +29,5 @@ Route::get('register',function()
 {	
 	return Redirect::to('portal/register');
 });
-
+///////////////////////////////////
 //Route::get('users', array('uses' => 'UsersController@showUsers'));

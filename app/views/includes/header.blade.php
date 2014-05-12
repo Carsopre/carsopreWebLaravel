@@ -34,7 +34,7 @@
 			  	  <?php if($user->hasPermission(31)) :?><li><a href="#">Languages</a></li><?php endif ?>
 	  	  		  <?php if($user->hasPermission(41)) :?><li><a href="#">Categories</a></li><?php endif ?>
 			  	  <li class="divider"></li>
-			      <?php if($user->hasPermission(2)) :?><li>{{ HTML::link('users/index', 'Users') }}</li><?php endif ?>
+			      <?php if($user->hasPermission(2)) :?><li>{{ HTML::link('users', 'Users') }}</li><?php endif ?>
 			      <?php if($user->hasPermission(11)) :?><li><a href="#">Profiles</a></li><?php endif ?>
 			      <?php if($user->hasPermission(21)) :?><li><a href="#">Permissions</a></li><?php endif ?>
 			  </ul>

@@ -22,6 +22,7 @@ return array(
     'PortalController' => $baseDir . '/app/controllers/PortalController.php',
     'Profile' => $baseDir . '/app/models/profiles.php',
     'ProfileTableSeeder' => $baseDir . '/app/database/seeds/DatabaseSeeder.php',
+    'ProfilesController' => $baseDir . '/app/controllers/ProfilesController.php',
     'Section' => $baseDir . '/app/models/sections.php',
     'Session' => $baseDir . '/app/models/sessions.php',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
