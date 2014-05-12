@@ -6,23 +6,9 @@
 						
 			<?php foreach($users as $user): ?>
 			<li>
-				<?php echo $user->name.' '.$user->lastname; ?>
+				<?php echo $user->username.' '; ?>
 			</li>
 			<?php endforeach; ?>
 		</div>
-		
-		<div class="large-8 small-12 columns">
-		
-			<fieldset>
-				<legend>Create New Account</legend>             
-				<?php echo Form::label('name', 'Full Name'); ?>
-				<?php echo Form::text('name',$user->name,array('placeholder'=>'Tell us your whole name')); ?>
-				<?php echo Form::label('email', 'Email'); ?>
-				<?php echo Form::text('email',$user->email,array('placeholder'=>'Valid email used to login and receive information from us')); ?>
-				<?php echo Form::label('password', 'Password'); ?>
-				<?php echo Form::password('password',$user->password,array('placeholder'=>'Gimme your password')); ?>
-				<?php echo Form::submit('Create Account',array('class'=>'button')); ?>
-			</fieldset>
-		</div>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layouts.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
