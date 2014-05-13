@@ -36,8 +36,15 @@ class UsersController extends \BaseController {
 	{
 		return $this->layout->content = View::make('layouts.create',
 			array(
-				'class'	=> 'users',
-				'title'	=> 'Create new User'
+				'class'	=> 'User',
+				'title'	=> 'Create new User',
+				'form'	=> array('url' => 'users', 'class'=>'form-signup'),
+				'field' => array(
+								array('text', 'username', 'field', 'Username'),
+								array('text', 'email', 'field', 'E-mail address'),
+								array('password', 'password', 'field', 'Password'),
+								array('password', 'password_confirmation', 'field', 'Confirm password')
+								)
 			));
 	}
 	public function store()
@@ -66,8 +73,7 @@ class UsersController extends \BaseController {
 	}
 
 	public function show($id)
-	{
-		
+	{		
 		return $this->layout->content = View::make('layouts.show',
 			array(
 				'class'	=> 'users',
@@ -83,7 +89,7 @@ class UsersController extends \BaseController {
 			array(
 				'class'	=> 'users',
 				'title'	=> 'Edit User',
-				'us'	=> $us,
+				'class_item'	=> $us,
 				'form'	=> array('route' => array('users.update', $us->id), 'method' => 'PUT', 'class'=>'form-signup'),
 				'field' => array(
 								array('text', 'username', 'field', 'UsernameS'),

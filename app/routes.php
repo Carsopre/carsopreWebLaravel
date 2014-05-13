@@ -13,6 +13,10 @@
 
 Route::resource('users', 'UsersController');
 Route::resource('profiles', 'ProfilesController');
+Route::resource('categories', 'CategoriesController');
+Route::resource('languages', 'LanguagesController');
+Route::resource('permissions', 'PermissionsController');
+
 Route::controller('portal', 'PortalController');
 ///////////////////////////////
 

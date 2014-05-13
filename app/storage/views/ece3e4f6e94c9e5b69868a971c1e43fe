@@ -31,12 +31,12 @@
 			  <a href="#">Config</a>
 			  <ul class="dropdown">
 			  	  <li><a href="#">Global Conf.</a></li>
-			  	  <?php if($user->hasPermission(31)) :?><li><a href="#">Languages</a></li><?php endif ?>
-	  	  		  <?php if($user->hasPermission(41)) :?><li><a href="#">Categories</a></li><?php endif ?>
+			  	  <?php if($user->hasPermission(31)) :?><li><?php echo HTML::link('languages', 'Languages'); ?></li><?php endif ?>
+	  	  		  <?php if($user->hasPermission(41)) :?><li><?php echo HTML::link('categories', 'Categories'); ?></li><?php endif ?>
 			  	  <li class="divider"></li>
 			      <?php if($user->hasPermission(2)) :?><li><?php echo HTML::link('users', 'Users'); ?></li><?php endif ?>
-			      <?php if($user->hasPermission(11)) :?><li><a href="#">Profiles</a></li><?php endif ?>
-			      <?php if($user->hasPermission(21)) :?><li><a href="#">Permissions</a></li><?php endif ?>
+			      <?php if($user->hasPermission(11)) :?><li><?php echo HTML::link('profiles', 'Profiles'); ?></li><?php endif ?>
+			      <?php if($user->hasPermission(21)) :?><li><?php echo HTML::link('permissions', 'Permissions'); ?></li><?php endif ?>
 			  </ul>
 		    </li>
 			<?php endif ?>
