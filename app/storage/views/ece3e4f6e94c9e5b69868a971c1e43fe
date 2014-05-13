@@ -17,11 +17,13 @@
 			<li class="divider">&nbsp;</li>
 			<?php if($user->hasAnyPermission(array(41, 51))) :?>
 			<li class="has-dropdown not-click">
-			  <a href="#">Sections</a>
+			  <a href="#">Categories</a>
 			  <ul class="dropdown">
-			      <li><a href="#">Curriculum Vitae</a></li>
-			      <li><a href="#">PortFolio</a></li>
-			      <li><a href="#">Contact</a></li>
+			  	<?php $cats = Category::all() ?>
+			  	<?php foreach($cats as $cat): ?>
+			  		<li><?php echo HTML::link($cat->name, $cat->name); ?></li>
+			  	<?php endforeach; ?>
+			      
 			  </ul>
 		    </li>
 			<?php endif ?>

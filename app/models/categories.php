@@ -3,6 +3,8 @@
 class Category extends Eloquent {
 
 	public static $rules = array(
+		'name'=>'required|alpha|between:3,64|unique:categories',
+		'description'=>'alpha_num'
 	 );
 	public static $unguarded = true;
 	/**
