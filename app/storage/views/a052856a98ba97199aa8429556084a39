@@ -1,0 +1,26 @@
+<?php $__env->startSection('content'); ?>
+<h1><?php echo $cat->name; ?></h1>
+<div class="panel">
+	<div class="row">
+		<?php foreach($sect as $sec): ?>
+			<div class="large-3 small-3 columns"><a href='#sec<?php echo $sec->id; ?>'><?php echo $sec->name; ?></a></div>
+		<?php endforeach; ?>
+	</div>
+</div>
+<?php if( ! empty($cat->description)): ?>
+	<div class="panel">
+		<?php echo $cat->description; ?>
+	</div>
+<?php endif; ?>
+
+<?php foreach($sect as $sec): ?>
+	<div>
+		<h3 id='#sec<?php echo $sec->id; ?>'><?php echo $sec->name; ?></h3>
+		<?php echo $sec->description; ?>
+		</br></br></br></br>
+	</div>
+<?php endforeach; ?>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

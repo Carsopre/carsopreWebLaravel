@@ -1,0 +1,26 @@
+<?php $__env->startSection('content'); ?>
+
+<div class="vpheight">
+	<div class="home-cont">
+		<div class="row sub-cont">
+			<div class="large-6 medium-6 columns centered text-right" >
+				<?php $cat = Category::getIDCategory('Portfolio') ; ?>
+				<?php echo HTML::link('categories/'.$cat->id, $cat->name); ?>
+				
+			</div>
+			<div class="large-6 medium-6 columns centered" >
+				<?php $cat = Category::getIDCategory('Curriculum') ; ?>
+				<?php echo HTML::link('categories/'.$cat->id, $cat->name); ?>
+			</div>
+		</div>
+		<div class="row sub-cont">
+			<div class="large-12 medium-12 columns text-center">
+				<?php $cat = Category::getIDCategory('Contact') ; ?>
+				<?php echo HTML::link('categories/'.$cat->id, $cat->name); ?>
+			</div>
+		</div>
+	</div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

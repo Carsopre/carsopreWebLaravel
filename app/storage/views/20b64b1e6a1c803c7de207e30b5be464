@@ -1,0 +1,57 @@
+	<!-- STATUS BAR -->
+	
+<div class="contain-to-grid sticky">
+	<nav class="top-bar" data-topbar>	  
+	  <ul class="title-area">
+		<li class="name"><h1><?php echo HTML::link('/', 'Home'); ?></h1></li>
+		
+		<li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+
+	  </ul>
+
+	  <section class="top-bar-section">
+	 	<!-- Left Nav Section -->
+		<ul>
+			<?php $cats = Category::all(); ?>
+			<?php foreach($cats as $cat): ?>
+				<li class="divider"></li>
+				<li><?php echo HTML::link('categories/'.$cat->id, $cat->name); ?></li>
+			<?php endforeach; ?>
+				<li class="divider"></li>
+		</ul>
+		<?php if( Auth::check()): ?>
+		<ul class="right">
+			<li class="divider">&nbsp;</li>	
+			<?php if($user->hasAnyPermission(array(2, 11, 21,31,41,51))) :?>
+			<li class="has-dropdown not-click">
+			  <a href="#">Config</a>
+			  <ul class="dropdown">
+			  	  <li><a href="#">Global Conf.</a></li>
+			  	  <li class="divider"></li>
+	  	  		  <?php if($user->hasPermission(41)) :?><li><?php echo HTML::link('categories', 'Categories'); ?></li><?php endif ?>
+	  	  		  <?php if($user->hasPermission(51)) :?><li><?php echo HTML::link('sections', 'Sections'); ?></li><?php endif ?>
+			  	  <li class="divider"></li>
+			      <?php if($user->hasPermission(2)) :?><li><?php echo HTML::link('users', 'Users'); ?></li><?php endif ?>
+			      <?php if($user->hasPermission(11)) :?><li><?php echo HTML::link('profiles', 'Profiles'); ?></li><?php endif ?>
+			      <?php if($user->hasPermission(21)) :?><li><?php echo HTML::link('permissions', 'Permissions'); ?></li><?php endif ?>
+			      <?php if($user->hasPermission(31)) :?><li><?php echo HTML::link('languages', 'Languages'); ?></li><?php endif ?>
+			  </ul>
+		    </li>
+			<?php endif ?>
+		    <li class="divider">&nbsp;</li>	
+			<li class="has-dropdown not-click">
+				<a href="#"><?= $user->username; ?></a>
+				<ul class="dropdown">
+				<li><a href="#">Config</a></li>
+				<li class="divider"></li>
+				<?php if(Auth::check()): ?>
+					<li><?php echo HTML::link('portal/logout', 'Logout'); ?></li>
+				<?php endif; ?>
+				</ul>
+			</li>
+			<li class="divider">&nbsp;</li>	
+		</ul>
+		<?php endif; ?>		
+	  </section>
+	</nav>	
+</div>

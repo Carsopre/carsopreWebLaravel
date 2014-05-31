@@ -1,0 +1,39 @@
+<?php $__env->startSection('content'); ?>
+	<h2>Create <?php echo ucfirst($class); ?></h2>
+	<?php echo Form::open($form); ?>
+	    <fieldset class="stacked register">
+		<legend><?php echo $title; ?></legend>
+	    <ul>
+	        <?php foreach($errors->all() as $error): ?>
+	            <li><?php echo $error; ?></li>
+	        <?php endforeach; ?>
+	    </ul>
+	 
+	    <?php foreach($field as $form): ?>
+	    	<?php echo Form::$form[0]($form[1],
+	    				null,
+	    				array('class'=>$form[2],
+	    					'placeholder'=>$form[3])); ?>
+	    <?php endforeach; ?>
+
+	    <?php if(isset($sel)): ?>
+	    	<fieldset>
+	    		<legend>Select <?php echo ucfirst($sel); ?></legend>
+	    		<select name='category_id'>
+	    			<?php foreach($sel_it as $si): ?>
+	    				<option value='<?php echo $si->id; ?>'><?php echo $si->name; ?></option>
+	    			<?php endforeach; ?>
+	    		</select>	    		
+	    	</fieldset>
+
+	    <?php endif; ?>
+	    </br>
+	 	<div class="large-12 columns">
+		    <?php echo Form::submit('Create',
+				     array('class'=>'small button radius')); ?>
+		    <a href="<?php echo URL::previous(); ?>" class="small button alert radius">Back</a>
+	    </div>
+	    </fieldset>
+	<?php echo Form::close(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

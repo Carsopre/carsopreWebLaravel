@@ -1,0 +1,84 @@
+
+  body{
+  	background: #F9F9F9;
+
+  }
+  #content{
+  	background: white;
+  	min-height: 100vh;
+  }
+  #content h1{
+  	font-family: 'Offside', cursive;
+  	font-size: 40px;
+  	color: #665d4e;
+  }
+  .vpheight{ /* Sets the div to the maximum height of the viewport (window) */
+    min-height: 100vh;
+  }
+  .home-cont{
+  	padding-top: 40vh;
+	top: 40%;
+  }
+  .sub-cont{
+  	font-family: 'Offside', cursive;
+  	font-size: 40px;
+  	color: #665d4e;
+  }
+  .sub-cont a{
+  	color: #665d4e;
+  }
+  .sub-cont a:hover{
+  	color: #dd6c69;
+  }
+
+  .portfolio{
+  	text-align: right;
+  }
+  
+  .top-bar{
+  	text-transform: uppercase;
+  }
+
+/* CHANGING FOUNDATION TOP-BAR*/
+.contain-to-grid{
+	background: transparent;
+}
+.top-bar{
+	background: #665d4e;
+	color: #e3dacc;
+	font-weight: bold;
+}
+.top-bar-section ul li a{ /* MENU COLLAPSED*/
+	background: #665d4e;
+	color: #e3dacc;
+	font-weight: bold;
+}
+.top-bar-section ul li > a {
+    color: white;
+    font-family: 'Offside', cursive;
+    font-size: 0.85rem;
+    font-weight: normal;
+  }
+.top-bar-section li:not(.has-form) a:not(.button) {
+      background: #665d4e; 
+      color: #e3dacc;
+  }
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+    background: #e3dacc;
+    color: #665d4e;
+ }
+/* MENU COLLAPSED*/
+.top-bar-section ul li{ 
+	background: #665d4e;
+	color: #e3dacc;
+	font-weight: bold;
+}
+.top-bar-section ul li a:hover{ 
+	background: #e3dacc;
+	color: #665d4e;
+	font-weight: bold;
+}
+.top-bar.expanded .toggle-topbar a {
+      color: white; }
+.top-bar.expanded .title-area {
+      background: #665d4e; }
