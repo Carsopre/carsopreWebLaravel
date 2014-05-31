@@ -15,6 +15,11 @@ class UsersController extends \BaseController {
 
 	public function index()
 	{
+		if( ! $us->hasPermission(2))
+			return Redirect::to('portal')
+				->with('type', 'alert')
+				->with('message', 'Not enough permissions');
+
 		$users = User::all();
 		$us = Auth::user();
 		$actions = 0;
@@ -34,6 +39,11 @@ class UsersController extends \BaseController {
 	
 	public function create()
 	{
+		if( ! $us->hasPermission(1))
+			return Redirect::to('portal')
+				->with('type', 'alert')
+				->with('message', 'Not enough permissions');
+
 		return $this->layout->content = View::make('layouts.create',
 			array(
 				'class'	=> 'User',
@@ -84,6 +94,11 @@ class UsersController extends \BaseController {
 	public function edit($id)
 	{
 		$us = User::find($id);
+		
+		if( ! $us->hasPermission(3))
+			return Redirect::to('portal')
+				->with('type', 'alert')
+				->with('message', 'Not enough permissions');
 
 		return $this->layout->content = View::make('layouts.edit',
 			array(
@@ -128,6 +143,11 @@ class UsersController extends \BaseController {
 	public function destroy($id)
 	{
 		$us = User::find($id);
+		if( ! $us->hasPermission(4))
+			return Redirect::to('portal')
+				->with('type', 'alert')
+				->with('message', 'Not enough permissions');
+
 		$us->delete();
 
 		return Redirect::to('users')

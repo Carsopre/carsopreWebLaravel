@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder {
 		Eloquent::unguard();
         
         $tables = array(
+        	'gconfigs',
 			'categories',
 			'permissions_profiles',
 			'permissions',
@@ -27,6 +28,7 @@ class DatabaseSeeder extends Seeder {
 		}
 		DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 		
+		$this->call('GconfigTableSeeder');
 		$this->call('CategoryTableSeeder');
 		$this->call('LanguageTableSeeder');
 		$this->call('PermissionTableSeeder');
@@ -35,6 +37,21 @@ class DatabaseSeeder extends Seeder {
 		$this->call('UserTableSeeder');
 
 	}
+
+}
+class GconfigTableSeeder extends Seeder{
+	/**
+	 * Inserts the default configuration
+	 *
+	 * @return void
+	 */
+	public function run()
+	{
+// 		DB::table('categories')->delete();
+		Gconfig::insert(array(
+		array('id' 	=> 	'1',	'project_name'	=>	'Carsopre Projects')
+		));				
+	}	
 
 }
 class CategoryTableSeeder extends Seeder {
@@ -119,7 +136,12 @@ class PermissionTableSeeder extends Seeder {
 		array('id' 	=> 	50,	'name'	=>	'Create Sections'),
 		array('id' 	=> 	51,	'name'	=>	'Read Sections'),
 		array('id' 	=> 	52,	'name'	=>	'Update Sections'),
-		array('id' 	=> 	53,	'name'	=>	'Delete Sections')
+		array('id' 	=> 	53,	'name'	=>	'Delete Sections'),
+		// -- Configuration
+		array('id' 	=> 	60,	'name'	=>	'Create Configurations'),
+		array('id' 	=> 	61,	'name'	=>	'Read Configurations'),
+		array('id' 	=> 	62,	'name'	=>	'Update Configurations'),
+		array('id' 	=> 	63,	'name'	=>	'Delete Configurations')
 		));
 	}
 }

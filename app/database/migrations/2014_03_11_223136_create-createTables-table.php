@@ -13,6 +13,7 @@ class CreateCreateTablesTable extends Migration {
 	public function up()
 	{
 		//Drop tables if exist
+		if (Schema::hasTable('gconfigs'))	$this->down();
 		if (Schema::hasTable('sections'))	$this->down();
 		if (Schema::hasTable('categories'))	$this->down();
 		if (Schema::hasTable('permissions_profiles'))	$this->down();
@@ -24,6 +25,23 @@ class CreateCreateTablesTable extends Migration {
 		
 		
 		//Create tables
+		Schema::create('gconfigs', function($table){
+			$table->engine='InnoDB';
+			//Primary Key
+			$table->increments('id');
+			//Standard
+			$table->string('project_name', 64)->unique();
+			$table->text('project_abstract');
+			$table->string('project_logo', 64);
+			$table->string('contact_name', 100);
+			$table->string('contact_email', 100);
+			$table->string('contact_facebook', 100);
+			$table->string('contact_linkedin', 100);
+			$table->string('contact_twitter', 100);
+			$table->text('contact_abstract');
+			$table->timestamps();
+		});
+
 		Schema::create('categories', function($table){
 			$table	-> engine='InnoDB';
 			//Primary Key
@@ -40,6 +58,7 @@ class CreateCreateTablesTable extends Migration {
 			$table->integer('category_id')->unsigned();
 			$table->string('name', 128)->unique();
 			$table->text('description');
+			
 			$table->tinyInteger('enabled')->unsigned()->default(1);
 			$table->timestamps();
 			//Relationships

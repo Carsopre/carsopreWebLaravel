@@ -13,5 +13,15 @@ class Category extends Eloquent {
 	 * @var string
 	 */
 	protected $table = 'categories';
+	protected $primaryKey = 'id';
+	
+	public function sections()
+	{
+		return $this->hasMany('Section');
+	}
 
+	public static function getIDCategory($cat)
+	{
+		return Category::where('name', '=', $cat)->first();
+	}
 }

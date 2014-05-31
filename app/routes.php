@@ -16,13 +16,17 @@ Route::resource('profiles', 'ProfilesController');
 Route::resource('categories', 'CategoriesController');
 Route::resource('languages', 'LanguagesController');
 Route::resource('permissions', 'PermissionsController');
+Route::resource('sections', 'SectionsController');
+Route::resource('config', 'ConfigController');
 
 Route::controller('portal', 'PortalController');
 ///////////////////////////////
-
 Route::get('/', 'HomeController@index');
 Route::get('portal', 'PortalController@index');
-
+Route::get('test',function()
+{
+	return Redirect::to('portal/test');
+});
 //Route::get('users', 'UsersController@index');
 Route::get('profiles', 'ProfilesController@index');
 Route::get('login',function()

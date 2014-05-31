@@ -8,13 +8,15 @@
 		<!-- CSS -->
 		<meta charset="utf-8">
 		
- 		
-		
 		<?php echo HTML::style('foundation/css/foundation.css'); ?>
-		<?php echo HTML::style('foundaion/css/normalize.css'); ?>
-		<?php echo HTML::style('foundaion/css/normalize.min.css'); ?>
-		<?php echo HTML::style('foundaion/css/style.css'); ?>
-				
+		<?php echo HTML::style('foundation/css/normalize.css'); ?>
+		<?php echo HTML::style('foundation/css/normalize.min.css'); ?>
+		<?php echo HTML::style('foundation/css/MY_foundation.css'); ?>
+		 <style>
+			@import url(http://fonts.googleapis.com/css?family=Offside);	
+		 </style>
+		 
+
 		<title>Carsopre Web | </title>
 		
 	</head>

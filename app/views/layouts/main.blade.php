@@ -1,11 +1,10 @@
 @include('includes.head')
 <body>
 	<header>
-	<?php if (Auth::check()) :?>
-		@include('includes.header')
-	<?php endif ?>
+		@if( '/' != Route::getCurrentRoute()->getPath())
+			@include('includes.header_admin')
+		@endif
 	</header>
-
 	<div id="container">
 		<div id="content" class="row">
 			@if(Session::has('message'))
@@ -23,9 +22,21 @@
 
 		{{HTML::script('foundation/js/vendor/jquery.js')}}
 		{{HTML::script('foundation/js/foundation/foundation.js')}}
+		
 		{{HTML::script('foundation/js/foundation/foundation.topbar.js')}}
+		{{HTML::script('foundation/js/foundation/foundation.orbit.js')}}
 		<script>
 			$(document).foundation();
+			$(document).foundation({
+			  orbit: {
+			    animation: 'slide',
+			    timer_speed: 1000,
+			    pause_on_hover: true,
+			    animation_speed: 500,
+			    navigation_arrows: true,
+			    bullets: false
+			  }
+			});
 		</script>
 </body>
 </html>

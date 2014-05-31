@@ -1,11 +1,10 @@
 <?php echo $__env->make('includes.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <body>
 	<header>
-	<?php if (Auth::check()) :?>
-		<?php echo $__env->make('includes.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-	<?php endif ?>
+		<?php if( '/' != Route::getCurrentRoute()->getPath()): ?>
+			<?php echo $__env->make('includes.header_admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		<?php endif; ?>
 	</header>
-
 	<div id="container">
 		<div id="content" class="row">
 			<?php if(Session::has('message')): ?>
@@ -23,9 +22,21 @@
 
 		<?php echo HTML::script('foundation/js/vendor/jquery.js'); ?>
 		<?php echo HTML::script('foundation/js/foundation/foundation.js'); ?>
+		
 		<?php echo HTML::script('foundation/js/foundation/foundation.topbar.js'); ?>
+		<?php echo HTML::script('foundation/js/foundation/foundation.orbit.js'); ?>
 		<script>
 			$(document).foundation();
+			$(document).foundation({
+			  orbit: {
+			    animation: 'slide',
+			    timer_speed: 1000,
+			    pause_on_hover: true,
+			    animation_speed: 500,
+			    navigation_arrows: true,
+			    bullets: false
+			  }
+			});
 		</script>
 </body>
 </html>
