@@ -1,5 +1,6 @@
 <?php $__env->startSection('content'); ?>
 <h1><?php echo $cat->name; ?></h1>
+
 <div class="panel">
 	<div class="row">
 		<?php foreach($sect as $sec): ?>
@@ -15,7 +16,7 @@
 
 <?php foreach($sect as $sec): ?>
 	<div>
-		<h3 id='#sec<?php echo $sec->id; ?>'><?php echo $sec->name; ?></h3>
+		<h3 id='sec<?php echo $sec->id; ?>'><?php echo $sec->name; ?></h3>
 		<?php echo $sec->description; ?>
 		</br></br></br></br>
 	</div>

@@ -112,11 +112,11 @@ class CategoriesController extends \BaseController {
 		//
 		$cat = Category::find($id);
 		$sect = Section::where('category_id', '=', $id)->get();
-
-		return $this->layout->content = View::make('layouts.show',
+					
+		return $this->layout->content = View::make('categories.'.strtolower($cat->name),
 			array(
-				'cat'	=>	$cat,
-				'sect'	=>	$sect
+				/*'cat'	=>	$cat,
+				'sect'	=>	$sect*/
 				));
 	}
 

@@ -1,6 +1,7 @@
 @extends('layouts.main')
 @section('content')
 <h1>{{$cat->name}}</h1>
+
 <div class="panel">
 	<div class="row">
 		@foreach($sect as $sec)
@@ -16,7 +17,7 @@
 
 @foreach($sect as $sec)
 	<div>
-		<h3 id='#sec{{$sec->id}}'>{{$sec->name}}</h3>
+		<h3 id='sec{{$sec->id}}'>{{$sec->name}}</h3>
 		{{$sec->description}}
 		</br></br></br></br>
 	</div>

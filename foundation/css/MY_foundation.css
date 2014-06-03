@@ -3,24 +3,41 @@
   	background: #F9F9F9;
 
   }
+
+  p{
+    font-family: 'Playfair Display SC', serif;
+  }
+
   #content{
   	background: white;
   	min-height: 100vh;
   }
   #content h1{
-  	font-family: 'Offside', cursive;
+  	font-family: 'Playfair Display SC', serif;
   	font-size: 40px;
+  	font-weight: bold;
   	color: #665d4e;
+  }
+  .cover-separator{
+    height: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 40vh;
+    margin-top: 1vh;
+    background: #665d4e;
+  }
+  .form-in-mid{
+  	padding-top: 20vh;
   }
   .vpheight{ /* Sets the div to the maximum height of the viewport (window) */
     min-height: 100vh;
   }
   .home-cont{
   	padding-top: 40vh;
-	top: 40%;
+	  top: 40%;
   }
   .sub-cont{
-  	font-family: 'Offside', cursive;
+  	font-family: 'Playfair Display SC', serif;
   	font-size: 40px;
   	color: #665d4e;
   }
@@ -48,26 +65,31 @@
 	color: #e3dacc;
 	font-weight: bold;
 }
-.top-bar-section ul li a{ /* MENU COLLAPSED*/
+
+/* MENU COLLAPSED*/
+.top-bar-section ul li a{ 
 	background: #665d4e;
 	color: #e3dacc;
 	font-weight: bold;
+
 }
 .top-bar-section ul li > a {
     color: white;
-    font-family: 'Offside', cursive;
-    font-size: 0.85rem;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 1.5rem;
     font-weight: normal;
   }
 .top-bar-section li:not(.has-form) a:not(.button) {
       background: #665d4e; 
       color: #e3dacc;
+      	font-size: 1.15rem;
   }
 .top-bar-section li:not(.has-form) a:not(.button):hover {
     background: #e3dacc;
     color: #665d4e;
+    font-size: 1.15rem;
  }
-/* MENU COLLAPSED*/
+
 .top-bar-section ul li{ 
 	background: #665d4e;
 	color: #e3dacc;
@@ -79,6 +101,19 @@
 	font-weight: bold;
 }
 .top-bar.expanded .toggle-topbar a {
-      color: white; }
+    color: white; 
+    font-weight:normal;
+}
+.top-bar .toggle-topbar a {
+    color: white; 
+    font-family: 'Playfair Display SC', serif;
+    font-size: 1.5rem;
+    font-weight:normal;
+}
 .top-bar.expanded .title-area {
-      background: #665d4e; }
+    background: #665d4e; 
+}
+.top-bar .title-area li h1{
+	font-family: 'Playfair Display SC', serif;
+    font-size: 1.5rem;
+ }

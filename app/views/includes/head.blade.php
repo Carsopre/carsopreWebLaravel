@@ -12,8 +12,9 @@
 		{{HTML::style('foundation/css/normalize.css')}}
 		{{HTML::style('foundation/css/normalize.min.css')}}
 		{{HTML::style('foundation/css/MY_foundation.css')}}
-		 <style>
-			@import url(http://fonts.googleapis.com/css?family=Offside);	
+		 <!-- @import url(http://fonts.googleapis.com/css?family=Offside); -->
+		 <style>			
+			@import url(http://fonts.googleapis.com/css?family=Playfair+Display+SC:400,700);
 		 </style>
 		 
 

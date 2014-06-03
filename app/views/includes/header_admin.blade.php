@@ -29,7 +29,7 @@
 			  	  <li><a href="#">Global Conf.</a></li>
 			  	  <li class="divider"></li>
 	  	  		  <?php if($user->hasPermission(41)) :?><li>{{ HTML::link('categories', 'Categories') }}</li><?php endif ?>
-	  	  		  <?php if($user->hasPermission(51)) :?><li>{{ HTML::link('sections', 'Sections') }}</li><?php endif ?>
+	  	  		  <!--<?php if($user->hasPermission(51)) :?><li>{{ HTML::link('sections', 'Sections') }}</li><?php endif ?>-->
 			  	  <li class="divider"></li>
 			      <?php if($user->hasPermission(2)) :?><li>{{ HTML::link('users', 'Users') }}</li><?php endif ?>
 			      <?php if($user->hasPermission(11)) :?><li>{{ HTML::link('profiles', 'Profiles') }}</li><?php endif ?>

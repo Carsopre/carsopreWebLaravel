@@ -47,7 +47,11 @@ class PortalController extends \BaseController {
 	}
 
 	public function getTest() {
-		$this->layout->content = View::make('layouts.test');
+		$this->layout->content = View::make('test');
+	}
+
+	public function getToDo() {
+		$this->layout->content = View::make('to-do');
 	}
 
 	public function postCreate() {

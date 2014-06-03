@@ -13,6 +13,9 @@
 				<?php echo HTML::link('categories/'.$cat->id, $cat->name); ?>
 			</div>
 		</div>
+		<div class="cover-separator">
+				.
+		</div>				
 		<div class="row sub-cont">
 			<div class="large-12 medium-12 columns text-center">
 				<?php $cat = Category::getIDCategory('Contact') ; ?>

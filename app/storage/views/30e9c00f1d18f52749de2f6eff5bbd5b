@@ -31,59 +31,6 @@
 	    	</fieldset>
 	    	<?php endif; ?>
 
-		 	<?php if( isset($perm_cre) AND $perm_cre): ?>
-		 	<fieldset>
-		 		<legend><?php echo ucfirst($class_sub_item); ?></legend>
-		 		<a href="<?php echo URL::to( $class_sub_item . '/'.'create'); ?>" class="small button radius">New <?php echo ucfirst($class_sub_item); ?></a>
-		 		<?php if($sub_item->count() > 0): ?>
-
-		 		<table>
-					<thead>
-						<tr>
-							<th>Name</th>
-							<?php if($actions): ?>
-								<th>Actions</th>
-							<?php endif; ?>
-						</tr>
-					</thead>
-				<tbody>	
-					<?php foreach($sub_item as $si): ?>
-		 			<tr>
-						<td> <?php echo $si->name; ?></td>
-						<td>
-						<?php if($actions>1): ?>
-							<ul class="button-group radius">
-						<?php endif; ?>							
-							<?php if($perm_upd): ?>
-								<?php if($actions>1): ?><li><?php endif; ?>
-								<a href="<?php echo URL::to( $class_sub_item . '/' . $si->id .'/edit'); ?>" class="small button radius">Edit</a>
-								<?php if($actions>1): ?></li><?php endif; ?>								
-							<?php endif; ?>
-
-							<?php if($perm_del): ?>
-								<?php if($actions>1): ?><li><?php endif; ?>
-								
-								<?php echo Form::open(array('url' => $class_sub_item . '/' . $si->id, 'class' => 'pull-right')); ?>
-									<?php echo Form::hidden('_method', 'DELETE'); ?>
-									<?php echo Form::submit('Delete', array('class' => 'small alert button radius')); ?>
-								<?php echo Form::close(); ?>
-
-								<?php if($actions>1): ?></li><?php endif; ?>
-							<?php endif; ?>
-							
-						<?php if($actions>1): ?>
-							</ul></td>
-						<?php else: ?>
-							</td>
-						<?php endif; ?>
-					</tr>		
-					<?php endforeach; ?>
-				</tbody>
-				<?php endif; ?>				
-				</table>
-				
-		 	</fieldset>
-		 	<?php endif; ?> 		
 	 	</div>
 	 	</br>
 	 	<div class="large-12 columns">

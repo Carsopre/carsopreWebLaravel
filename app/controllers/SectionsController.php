@@ -11,6 +11,9 @@ class SectionsController extends \BaseController {
 	  $this->beforeFilter('auth',	array('only'=>array('getDashboard')));
 	 
     }
+     /*
+		CLASS DISABLED DUE TO RESTRUCTURE OF THE CATEGORIES
+    */
 
 	/**
 	 * Display a listing of the resource.
@@ -33,9 +36,9 @@ class SectionsController extends \BaseController {
 			array(
 				'class'		=> 'sections',
 				'table_title'	=> 'Sections',
-				'table_header'	=> array( 'ID', 'Name', 'Descritpion', 'enabled'),
+				'table_header'	=> array( 'ID', 'Name', 'enabled'),
 				'table_content' => $sec,
-				'table_columns' => array( 'id', 'name', 'description', 'enabled'),
+				'table_columns' => array( 'id', 'name', 'enabled'),
 				'perm_cre'	=> $us->hasPermission(50),
 				'perm_upd'	=> $us->hasPermission(52) AND ++$actions,
 				'perm_del'	=> $us->hasPermission(53) AND ++$actions,
