@@ -64,10 +64,9 @@ class CategoryTableSeeder extends Seeder {
 	{
 // 		DB::table('categories')->delete();
 		Category::insert(array(
-		array('id' 	=> 	'1',	'name'	=>	'Web'),
-		array('id' 	=> 	'2',	'name'	=>	'Curriculum Vitae'),
-		array('id' 	=> 	'3',	'name'	=>	'Portfolio'),
-		array('id' 	=> 	'4',	'name'	=>	'Contact')
+			array('id' 	=> 	'1',	'name'	=>	'Curriculum'),
+			array('id' 	=> 	'2',	'name'	=>	'Portfolio'),
+			array('id' 	=> 	'3',	'name'	=>	'Contact')
 		));		
 	}
 }

@@ -15,6 +15,7 @@ class UsersController extends \BaseController {
 
 	public function index()
 	{
+		$us = Auth::user();
 		if( ! $us->hasPermission(2))
 			return Redirect::to('portal')
 				->with('type', 'alert')
@@ -39,6 +40,7 @@ class UsersController extends \BaseController {
 	
 	public function create()
 	{
+		$us = Auth::user();
 		if( ! $us->hasPermission(1))
 			return Redirect::to('portal')
 				->with('type', 'alert')

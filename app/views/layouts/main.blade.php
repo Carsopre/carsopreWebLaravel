@@ -17,26 +17,20 @@
 		</div>
 	</div>
 	<footer class="row">
-		@include('includes.footer')
+		@include('includes.footer')		
 	</footer>
 
 		{{HTML::script('foundation/js/vendor/jquery.js')}}
 		{{HTML::script('foundation/js/foundation/foundation.js')}}
 		
 		{{HTML::script('foundation/js/foundation/foundation.topbar.js')}}
-		{{HTML::script('foundation/js/foundation/foundation.orbit.js')}}
-		<script>
-			$(document).foundation();
-			$(document).foundation({
-			  orbit: {
-			    animation: 'slide',
-			    timer_speed: 1000,
-			    pause_on_hover: true,
-			    animation_speed: 500,
-			    navigation_arrows: true,
-			    bullets: false
-			  }
-			});
-		</script>
-</body>
+		
+		{{HTML::script('assets/js/sigma.js/sigma.min.js')}}	
+		{{HTML::script('assets/js/sigma.js/plugins/sigma.parsers.gexf.min.js')}}
+		{{HTML::script('assets/js/script-graphs.js')}}	
+		
+		{{HTML::script('assets/js/chart.js/Chart.js')}}
+		{{HTML::script('assets/js/script-chart.js')}}	
+		
+	</body>
 </html>

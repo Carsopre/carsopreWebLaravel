@@ -17,26 +17,20 @@
 		</div>
 	</div>
 	<footer class="row">
-		<?php echo $__env->make('includes.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		<?php echo $__env->make('includes.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>		
 	</footer>
 
 		<?php echo HTML::script('foundation/js/vendor/jquery.js'); ?>
 		<?php echo HTML::script('foundation/js/foundation/foundation.js'); ?>
 		
 		<?php echo HTML::script('foundation/js/foundation/foundation.topbar.js'); ?>
-		<?php echo HTML::script('foundation/js/foundation/foundation.orbit.js'); ?>
-		<script>
-			$(document).foundation();
-			$(document).foundation({
-			  orbit: {
-			    animation: 'slide',
-			    timer_speed: 1000,
-			    pause_on_hover: true,
-			    animation_speed: 500,
-			    navigation_arrows: true,
-			    bullets: false
-			  }
-			});
-		</script>
-</body>
+		
+		<?php echo HTML::script('assets/js/sigma.js/sigma.min.js'); ?>	
+		<?php echo HTML::script('assets/js/sigma.js/plugins/sigma.parsers.gexf.min.js'); ?>
+		<?php echo HTML::script('assets/js/script-graphs.js'); ?>	
+		
+		<?php echo HTML::script('assets/js/chart.js/Chart.js'); ?>
+		<?php echo HTML::script('assets/js/script-chart.js'); ?>	
+		
+	</body>
 </html>
