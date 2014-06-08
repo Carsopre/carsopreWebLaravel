@@ -8,9 +8,6 @@ composer.lock
 .env.php
 .DS_Store
 Thumbs.db
-.sublime-project
-<<<<<<< HEAD
-.sublime-workspace
-=======
-.sublime-workspace
->>>>>>> 3aeecd3f4c1a5b83f1cc16a6bceef425f07df988
+carsopreWeb.sublime-project
+carsopreWeb.sublime-workspace
+

@@ -4,12 +4,12 @@
 		"selected_items":
 		[
 			[
-				"ge",
-				"gexf"
+				"margin-",
+				"margin-top"
 			],
 			[
-				"margin-",
-				"margin-left"
+				"ge",
+				"gexf"
 			],
 			[
 				"min",
@@ -68,26 +68,10 @@
 	"buffers":
 	[
 		{
-			"file": "assets/js/script-chart.js",
+			"file": ".gitignore",
 			"settings":
 			{
-				"buffer_size": 2636,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/views/layouts/home.blade.php",
-			"settings":
-			{
-				"buffer_size": 4067,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "foundation/css/MY_foundation.css",
-			"settings":
-			{
-				"buffer_size": 4104,
+				"buffer_size": 267,
 				"line_ending": "Windows"
 			}
 		}
@@ -119,25 +103,29 @@
 	},
 	"file_history":
 	[
+		"/C/wamp/www/laravel/assets/js/script-chart.js",
+		"/C/wamp/www/laravel/foundation/css/MY_foundation.css",
+		"/C/wamp/www/laravel/app/views/layouts/home.blade.php",
+		"/C/wamp/www/laravel/app/views/includes/header_admin.blade.php",
+		"/C/wamp/www/laravel/app/config/database.php",
+		"/C/wamp/www/laravel/app/views/categories/contact.blade.php",
+		"/C/wamp/www/laravel/app/views/categories/curriculum.blade.php",
+		"/C/wamp/www/laravel/app/views/categories/portfolio.blade.php",
+		"/C/wamp/www/laravel/assets/js/script-graphs.js",
 		"/C/wamp/www/laravel/app/views/layouts/main.blade.php",
 		"/C/wamp/www/laravel/assets/js/data",
 		"/C/wamp/www/laravel/assets/js/sigma.js/script-graphs.js",
 		"/C/wamp/www/laravel/assets/js/plugins/sigma.parsers.gexf.min.js",
 		"/C/wamp/www/laravel/app/views/includes/head.blade.php",
 		"/C/wamp/www/laravel/assets/js/data.json",
-		"/C/wamp/www/laravel/app/views/layouts/home.blade.php",
 		"/C/wamp/www/laravel/bootstrap/paths.php",
 		"/C/wamp/www/laravel/index.php",
 		"/C/wamp/www/laravel/public/assets/js/data.json",
 		"/C/wamp/www/laravel/public/foundation/css/MY_foundation.css",
 		"/C/wamp/www/laravel/app/views/includes/footer.php",
 		"/C/wamp/www/laravel/public/assets/js/sigma.min.js",
-		"/C/wamp/www/laravel/app/views/categories/contact.blade.php",
-		"/C/wamp/www/laravel/app/views/categories/portfolio.blade.php",
-		"/C/wamp/www/laravel/app/views/categories/curriculum.blade.php",
 		"/C/wamp/www/laravel/public/.htaccess",
 		"/C/wamp/www/laravel/app/controllers/UsersController.php",
-		"/C/wamp/www/laravel/app/config/database.php",
 		"/C/wamp/www/laravel/bootstrap/autoload.php",
 		"/C/wamp/www/laravel/public/index.php",
 		"/C/wamp/www/laravel/app/database/seeds/DatabaseSeeder.php",
@@ -151,9 +139,7 @@
 		"/C/wamp/www/laravel/app/views/layouts/show.blade.php",
 		"/C/wamp/www/laravel/app/views/layouts/edit.blade.php",
 		"/C/wamp/www/laravel/app/views/layouts/show_category_sections.blade.php",
-		"/C/wamp/www/laravel/foundation/css/MY_foundation.css",
 		"/C/wamp/www/laravel/app/controllers/SectionsController.php",
-		"/C/wamp/www/laravel/app/views/includes/header_admin.blade.php",
 		"/C/wamp/www/laravel/app/views/layouts/contact.blade.php",
 		"/C/wamp/www/laravel/app/views/layouts/test_config.blade.php",
 		"/C/wamp/www/laravel/app/views/portal/login.blade.php",
@@ -263,96 +249,35 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "assets/js/script-chart.js",
+					"file": ".gitignore",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2636,
+						"buffer_size": 267,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								855,
-								874
+								154,
+								154
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 582.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/views/layouts/home.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4067,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2940,
-								3157
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 2.0,
-						"translation.y": 1258.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "foundation/css/MY_foundation.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4104,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4009,
-								4009
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3337.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -429,8 +354,8 @@
 	"show_minimap": false,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": false,
-	"side_bar_width": 157.0,
+	"side_bar_visible": true,
+	"side_bar_width": 219.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
