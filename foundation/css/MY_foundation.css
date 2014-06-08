@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
   body{
   	background: #F9F9F9;
@@ -224,3 +225,231 @@
   margin-bottom: 10px;
   border-color: #665d4e;
 }
+=======
+
+  body{
+  	background: #F9F9F9;
+  }
+  .breadcrumbs{
+    border: 1px solid #665d4e;
+    background: white;
+    text-align: center;
+  }
+
+  p{
+    font-family: 'Playfair Display SC', serif;
+  }
+
+  #content{
+    border-left: 1px solid #665d4e;
+    border-right: 1px solid #665d4e;
+  	background: white;
+  	min-height: 100vh;
+  }
+
+  #content h1{
+  	font-family: 'Playfair Display SC', serif;
+  	font-size: 40px;
+  	font-weight: bold;
+  	color: #665d4e;
+  }
+  fieldset h3{
+    font-family: 'Playfair Display SC', serif;
+    font-size: 20px;
+    color: #665d4e;
+  }
+  .cover-separator{
+    height: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 40vh;
+    margin-top: 1vh;
+    background: #665d4e;
+  }
+  .form-in-mid{
+  	padding-top: 20vh;
+  }
+  .vpheight{ /* Sets the div to the maximum height of the viewport (window) */
+    min-height: 100vh;
+  }
+  .under{
+      background: #C7B9A3;
+      padding-top: 10vh;
+      color: #F9F9F9;
+      font-family: 'Playfair Display SC', serif;   
+
+      
+      border:2px solid #7A5411;
+      background-color:#C7B9A3;
+   }
+  .under-cont{
+    padding-top: 2vh;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 20px;
+    color: #665d4e;
+  }
+  .under-h{
+    font-size: 40px;
+  }
+  .home-cont{
+  	padding-top: 30vh;
+	  top: 40%;
+  }
+  .sub-cont{
+    padding-top: 2vh;
+  	font-family: 'Playfair Display SC', serif;
+  	font-size: 40px;
+  	color: #665d4e;
+  }
+  .sub-cont a{
+  	color: #665d4e;
+  }
+  .sub-cont a:hover{
+  	color: #dd6c69;
+  }
+
+  .portfolio{
+  	text-align: right;
+  }
+  
+  .top-bar{
+  	text-transform: uppercase;
+  }
+
+/* CHANGING FOUNDATION TOP-BAR*/
+.contain-to-grid{
+	background: transparent;
+}
+.top-bar{
+	background: #665d4e;
+	color: #e3dacc;
+	font-weight: bold;
+}
+
+/* MENU COLLAPSED*/
+.top-bar-section ul li a{ 
+	background: #665d4e;
+	color: #e3dacc;
+	font-weight: bold;
+
+}
+.top-bar-section ul li > a {
+    color: white;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+.top-bar-section li:not(.has-form) a:not(.button) {
+      background: #665d4e; 
+      color: #e3dacc;
+      	font-size: 1.15rem;
+  }
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+    background: #e3dacc;
+    color: #665d4e;
+    font-size: 1.15rem;
+ }
+
+.top-bar-section ul li{ 
+	background: #665d4e;
+	color: #e3dacc;
+	font-weight: bold;
+}
+.top-bar-section ul li a:hover{ 
+	background: #e3dacc;
+	color: #665d4e;
+	font-weight: bold;
+}
+.top-bar.expanded .toggle-topbar a {
+    color: white; 
+    font-weight:normal;
+}
+.top-bar .toggle-topbar a {
+    color: white; 
+    font-family: 'Playfair Display SC', serif;
+    font-size: 1.5rem;
+    font-weight:normal;
+}
+.top-bar.expanded .title-area {
+    background: #665d4e; 
+}
+.top-bar .title-area li h1{
+	font-family: 'Playfair Display SC', serif;
+    font-size: 1.5rem;
+ }
+
+ /* charts and graphics */
+#skills-graph{
+  background-color:  none;
+  
+  
+  height: 50vh;
+}
+.chart{
+  background-color:  rgba(254, 254, 254, 0.65);
+  box-shadow: 0px 0px 5vh #665d4e;
+  border: 1px solid #7A5411;
+}
+.chart-legend ul {
+    list-style: none;
+    width: 70%;
+    margin: 30px auto auto;
+}
+.chart-legend li {
+    text-indent: 16px;
+    line-height: 24px;
+    position: relative;
+    font-weight: 200;
+    display: block;
+    float: left;
+    width: 50%;
+    font-size: 0.8em;
+}
+.chart-legend  li:before {
+    display: block;
+    width: 10px;
+    height: 16px;
+    border: 1px solid black;
+    position: absolute;
+    left: 0;
+    top: 3px;
+    content: "";
+}
+
+.chart-sublegend ul {
+    list-style: none;
+    display: inline-block;
+    width: 50%;
+    border: 2px solid #665d4e;
+}
+.chart-sublegend li {
+    text-indent: 16px;
+    line-height: 24px;
+    position: relative;
+    font-weight: 200;
+    display: block;
+    float: left;
+    width: 50%;
+    font-size: 0.8em;
+}
+
+.h-sports:before { background-color: #F7464A; }
+.h-travel:before { background-color: #E2EAE9; }
+.h-motor:before { background-color: #D4CCC5; }
+.h-read:before { background-color: #4D5360; }
+.h-music:before { background-color: #949FB1; }
+
+.l-spa:before { background-color: #dcdcdc; }
+.l-val:before { background-color: #dcdcdc; }
+.l-eng:before { background-color: #14dcdc; }
+.l-fre:before { background-color: #dc14dc; }
+.l-dut:before { background-color: #dcdc00; }
+
+.chart legend{
+  background: none;
+}
+.chart fieldset{
+  margin-bottom: 10px;
+  border-color: #665d4e;
+}
+>>>>>>> 3aeecd3f4c1a5b83f1cc16a6bceef425f07df988

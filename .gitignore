@@ -9,4 +9,8 @@ composer.lock
 .DS_Store
 Thumbs.db
 .sublime-project
+<<<<<<< HEAD
 .sublime-workspace
+=======
+.sublime-workspace
+>>>>>>> 3aeecd3f4c1a5b83f1cc16a6bceef425f07df988
