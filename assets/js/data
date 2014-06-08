@@ -1,0 +1,60 @@
+var myData = [
+   {
+      "date": "15-12-2012",
+      "rank": 1896594,
+      "sites-linking": 50
+    },
+    {
+      "date": "17-12-2012",
+      "rank": 1895639,
+     "sites-linking": 50
+   },
+   {
+     "date": "09-02-2013",
+     "rank": 413592,
+     "sites-linking": 47
+   },
+   {
+     "date": "12-02-2013",
+     "rank": 327643,
+     "sites-linking": 55
+   },
+   {
+     "date": "14-02-2013",
+     "rank": 313141,
+     "sites-linking": 55
+   },
+   {
+     "date": "15-02-2013",
+     "rank": 292197,
+     "sites-linking": 55
+   },
+   {
+     "date": "25-02-2013",
+     "rank": 242294,
+     "sites-linking": 88
+   },
+   {
+     "date": "26-02-2013",
+     "rank": 234704,
+     "sites-linking": 88
+   },
+   {
+     "date": "02-03-2013",
+     "rank": 213869,
+     "sites-linking": 100
+   }
+],
+
+lineChartData = {
+    labels : ["January","February","March","April","May","June","July"],
+     datasets : [
+       {
+       fillColor : "rgba(220,220,220,0.5)",
+       strokeColor : "rgba(220,220,220,1)",
+       pointColor : "rgba(220,220,220,1)",
+       pointStrokeColor : "#fff",
+       data : [65,59,90,81,56,55,40]
+       }
+     ]
+   };
