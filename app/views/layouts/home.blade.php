@@ -92,7 +92,7 @@
 		            <li class="l-dut">Dutch</li>
 	        	</ul>
         	</div>
-        	
+
         	<div class="chart-sublegend">
         		<ul class="text-left">
         			<li>20 - A1</li>
@@ -128,7 +128,7 @@
 	<div class="row under-cont">
 		<div class="chart large-offset-2 medium-offset-2 large-8 medium-8 columns centered text-center">		
 			<fieldset>
-			<legend>Overall personality</legend>
+			<legend>Me</legend>
 			<canvas id="overall-chart" width="400" height="400"></canvas>
 			</fieldset>
 		</div>

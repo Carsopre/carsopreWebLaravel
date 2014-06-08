@@ -11,15 +11,19 @@
 
 	  <section class="top-bar-section">
 	 	<!-- Left Nav Section -->
+	 	@if( Auth::check())
+ 	 	<?php if($user->hasPermission(41)): ?>
 		<ul>
-			<?php $cats = Category::all(); ?>
+			<?php $cats = Category::all(); ?>			
 			@foreach($cats as $cat)
 				<li class="divider"></li>
 				<li>{{ HTML::link('categories/'.$cat->id, $cat->name)}}</li>
 			@endforeach
 				<li class="divider"></li>
+
 		</ul>
-		@if( Auth::check())
+		<?php endif; ?>
+		
 		<ul class="right">
 			<li class="divider">&nbsp;</li>	
 			<?php if($user->hasAnyPermission(array(2, 11, 21,31,41,51))) :?>
