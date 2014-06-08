@@ -1,4 +1,0 @@
-
-<?php echo $__env->make('portal.login', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-
-<?php echo $__env->make('layouts.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
