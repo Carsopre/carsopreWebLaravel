@@ -80,8 +80,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
      	if( ! isset($this->permissions))
      		$this->getPermissions();
 
-     	return (0 == count(array_diff($perm, $this->permissions)));
-		//return in_array($perm, array_fetch($this->profile->permissions->toArray(), 'id'));
+     	//return (0 == count(array_diff($perm, $this->permissions)));
+		return in_array($perm, $this->permissions);
      }
      public function hasAnyPermission($perm)
      {
