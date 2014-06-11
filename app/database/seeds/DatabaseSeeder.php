@@ -186,7 +186,6 @@ class Permissions_ProfileTableSeeder extends Seeder {
 		//Insert just the basic, they can be modified afterwards in the app.
 		Permissions_Profile::insert(array(
 			//Profile '2' - User
-			array('permission_id'	=>	'2', 'profile_id'	=>	'2'),	//Read Users
 			array('permission_id'	=>	'11', 'profile_id'	=>	'2'),	//Read Profiles
 			array('permission_id'	=>	'21', 'profile_id'	=>	'2'),	//Read Permissions
 			array('permission_id'	=>	'31', 'profile_id'	=>	'2'),	//Read Languages
@@ -214,7 +213,7 @@ class UserTableSeeder extends Seeder {
 			'id' 			=> 	'1',
 			'username'		=>	'Admin',
 			'email'			=>	'cssp1989@gmail.com',
-			'password'		=>	Hash::make('admin123'),
+			'password'		=>	'$2y$10$h23gVkjuRU168QGhbgNcQu..mDRH6BIYrjH/vziU1b8HmeGnOeJFO',
 			'profile_id'	=>	'1',
 			'language_id'	=>	'2',
 			'enabled'		=>	'1')

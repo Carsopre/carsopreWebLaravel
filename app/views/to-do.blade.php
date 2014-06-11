@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @section('content')
+
 <div class="form-in-mid">
 	<fieldset>
 	<legend><h1>To-do list</h1></legend>
