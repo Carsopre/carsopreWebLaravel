@@ -61,6 +61,12 @@ class UsersController extends \BaseController {
 	}
 	public function store()
 	{
+
+		if( ! $us->hasPermission(1))
+			return Redirect::to('portal')
+				->with('type', 'alert')
+				->with('message', 'Not enough permissions');
+
 	   	$validator = Validator::make(Input::all(), User::$rules);
 	
 	    if ($validator->passes()) {

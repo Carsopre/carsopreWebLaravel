@@ -39,6 +39,11 @@ class PortalController extends \BaseController {
 
 	public function getRegister() {
 	  //patch to avoid entering to login once logged in
+		if( ! Auth::user()->hasPermission(1))
+			return Redirect::to('portal')
+				->with('type', 'alert')
+				->with('message', 'Not enough permissions');
+
 		if(Auth::guest())
 			$this->layout->content = View::make('portal.register');
 		else
@@ -55,6 +60,12 @@ class PortalController extends \BaseController {
 	}
 
 	public function postCreate() {
+
+		if( ! Auth::user()->hasPermission(1))
+			return Redirect::to('portal')
+				->with('type', 'alert')
+				->with('message', 'Not enough permissions');
+
 	   $validator = Validator::make(Input::all(), User::$rules);
 	
 	    if ($validator->passes()) {
