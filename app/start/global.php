@@ -54,8 +54,8 @@ App::error(function(Exception $exception, $code)
 App::missing(function($code)
 {
 	return Redirect::to('/')
-				->with('type', 'alert')
-				->with('message', 'Page not found');
+		->with('type', 'alert')
+		->with('message', 'Page not found');
 });
 
 /*
