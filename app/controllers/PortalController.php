@@ -42,7 +42,7 @@ class PortalController extends \BaseController {
 		if( Auth::guest())
 			return Redirect::to('portal')
 				->with('type', 'alert')
-				->with('message', 'Not enough permissions');
+				->with('message', 'Sorry, register is not allowed yet!');
 
 		if(Auth::guest())
 			$this->layout->content = View::make('portal.register');
@@ -64,7 +64,7 @@ class PortalController extends \BaseController {
 		if( Auth::guest())
 			return Redirect::to('portal')
 				->with('type', 'alert')
-				->with('message', 'Not enough permissions');
+				->with('message', 'Sorry, register is not allowed yet!');
 
 	   $validator = Validator::make(Input::all(), User::$rules);
 	
