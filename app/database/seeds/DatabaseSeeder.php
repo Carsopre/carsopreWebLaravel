@@ -214,7 +214,7 @@ class UserTableSeeder extends Seeder {
 			'id' 			=> 	'1',
 			'username'		=>	'Admin',
 			'email'			=>	'cssp1989@gmail.com',
-			'password'		=>	Hash::make('admin123'),
+			'password'		=>	'$2y$10$h23gVkjuRU168QGhbgNcQu..mDRH6BIYrjH/vziU1b8HmeGnOeJFO',
 			'profile_id'	=>	'1',
 			'language_id'	=>	'2',
 			'enabled'		=>	'1')
