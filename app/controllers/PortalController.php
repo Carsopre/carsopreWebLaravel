@@ -39,7 +39,7 @@ class PortalController extends \BaseController {
 
 	public function getRegister() {
 	  //patch to avoid entering to login once logged in
-		if( ! Auth::user()->hasPermission(1))
+		if( Auth::guest())
 			return Redirect::to('portal')
 				->with('type', 'alert')
 				->with('message', 'Not enough permissions');
@@ -61,7 +61,7 @@ class PortalController extends \BaseController {
 
 	public function postCreate() {
 
-		if( ! Auth::user()->hasPermission(1))
+		if( Auth::guest())
 			return Redirect::to('portal')
 				->with('type', 'alert')
 				->with('message', 'Not enough permissions');
