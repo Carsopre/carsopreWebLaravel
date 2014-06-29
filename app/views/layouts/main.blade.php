@@ -19,7 +19,7 @@
 	<footer class="row">
 		@include('includes.footer')		
 	</footer>
-		
+		<?php include_once("analyticstracking.php") ?>
 		{{HTML::script('foundation/js/vendor/jquery.js')}}
 		{{HTML::script('foundation/js/foundation/foundation.js')}}
 		
