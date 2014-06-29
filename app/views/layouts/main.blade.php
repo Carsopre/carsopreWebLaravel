@@ -19,7 +19,7 @@
 	<footer class="row">
 		@include('includes.footer')		
 	</footer>
-		@include('includes.analyticstracking')
+		
 		{{HTML::script('foundation/js/vendor/jquery.js')}}
 		{{HTML::script('foundation/js/foundation/foundation.js')}}
 		
